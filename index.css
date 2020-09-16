@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Press+Start+2P&family=Saira+Condensed:wght@100;600&family=Turret+Road&display=swap');
+
+@media screen and (max-width: 600px) {
+
+  #mySearch, #mySearchFriend, input[type=search]{
+    width: 100%
+    }
+  html { font-size: 3vw; 
+    }
+  
+  h1{
+    font-size: 9vw !important;
+    }
+
+  h2{
+    font-size: 8vw !important;
+    }
+  
+  h3{
+    font-size: 5vw !important;
+  }
+  
+  p{
+    font-size: 3vw !important;
+    }
+
+  .tab{
+    font-size: 3vw !important;
+      } 
+}
+
+/* Style the heading text */
+.heading {
+  line-height: 1.0;
+}
+
+/* Style body to include background image */
+body {
+  background-image: url("Images/pcbackground.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* Style the main */
+div {
+  width: 100%;
+  height: 100%;
+}
+
+/* Style the h1 text  */
+h1{
+  color: white;
+  font-size: 100px;
+  text-align: center;
+  font-family: 'Press Start 2P', cursive;
+  margin-bottom: 10px;
+  animation-name: headingtext;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+/*animation for h1 text*/
+@keyframes headingtext {
+  0%   {color: red;}
+  33%  {color: orange;}
+  66%  {color: yellow;}
+  100% {color: white;}
+}
+
+/* Style the div for heading 2 text */
+h2{
+  color: white;
+  font-size: 40px;
+  text-align: center;
+  font-family: 'Saira Condensed', sans-serif;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+/*Style for h3 text in divs*/
+h3{
+  font-size: 25px;
+  font-family: 'Saira Condensed', sans-serif;
+  color: #000000;
+  text-shadow: 2px 1px 4px rgb(61, 22, 21);
+}
+
+/* Style the p text */
+p{
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+/* Style the form */
+form {
+  background-color: white;
+  padding: 5px;
+  text-align: center;
+  font-family: 'Saira Condensed', sans-serif;
+  font-weight: 600;
+}
+
+
+/* Style the div for user info */
+.user{
+  margin-top: 20%;
+  margin-left: 10%;
+  margin-right: 5%;
+  border-style: solid;
+  border-color: black;
+  background:linear-gradient(to bottom, #ffff4a 5%, #fa2600 100%);
+  background-color:#ffff4a;
+  Padding-bottom: 20px;
+  border-radius:8px;
+
+}
+
+/* Style the div for friend info */
+.friend{
+  margin-top: 20%;
+  margin-left: 5%;
+  margin-right: 10%;
+  border-style: solid;
+  border-color: black;
+  background:linear-gradient(to bottom, #ffff4a 5%, #fa2600 100%);
+  background-color:#ffff4a;
+  Padding-bottom: 20px;
+  border-radius:8px;
+
+}
+
+/* Style the container holding item divs */
+.group {
+  display: flex;
+  border-radius:8px;
+}
+
+/* Style item boxes used for the two forms */
+.item {
+  flex: 1;
+  margin-top:-5%;  
+}
+
+/* Style the submit button */
+.submitbutton{
+ text-align: center;
+}
+
+/* Style the search button */
+#mySearchButton {
+  margin-top: 4%;
+  box-shadow: 0px 10px 25px -3px #000000;
+	background:linear-gradient(to bottom, #ffff4a 5%, #fa2600 100%);
+	background-color:#ffff4a;
+	border-radius:8px;
+	border:3px solid #020500;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+  font-family: 'Saira Condensed', sans-serif;
+  font-weight: bold;
+	font-size:18px;
+	padding:11px 45px;
+	text-decoration:none;
+  text-shadow:0px 1px 0px #000000;
+}
+
+/* Style the search box for user info */
+#mySearch{
+  border-radius: 5px;
+  padding-top:5px;
+  padding-bottom:5px;
+  width: 90%;
+}
+
+/* Style the search box for friend info */
+#mySearchFriend{
+  border-radius: 5px;
+  padding-top:5px;
+  padding-bottom:5px;
+  width: 90%;
+}
+
+/* Style the input field for user platform */
+#platform{
+  width: 30%;
+}
+
+/* Style the input field for friend platform */
+#platformfriend{
+  width: 30%;
+}
+
+/* Style the restart button */
+#restart-btn{
+  margin-top: 4%;
+  box-shadow: 0px 10px 25px -3px #000000;
+	background:linear-gradient(to bottom, #ffff4a 5%, #fa2600 100%);
+	background-color:#ffff4a;
+	border-radius:8px;
+	border:3px solid #020500;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+  font-family: 'Saira Condensed', sans-serif;
+  font-weight: bold;
+	font-size:18px;
+	padding:11px 45px;
+	text-decoration:none;
+  text-shadow:0px 1px 0px #000000;
+}
+
+/* Style the tab */
+.tab {
+  overflow: hidden;
+  border: 1px solid;
+  background-color: black;
+  margin-left: -18px;
+  font-family: 'Turret Road', cursive;
+  font-size: 16px;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  background-color: inherit;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  color: white;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Style the tab content */
+.userTab {
+  display: none;
+  margin-left: 0px;
+  border-top: none;
+  text-align: left;
+}
+/* Style the friend tab content */
+.friendTab {
+  display: none;
+  margin-left: 0px;
+  border-top: none;
+  text-align: left;
+}
