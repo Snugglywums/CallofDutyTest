@@ -8,7 +8,7 @@ function homeScreenHTML(){
     return`  
 <section>
     <div class="group">
-       <div class="item">
+        <div class="item">
             <form class="user">
                <h3 id="userName">Enter Your User Name</h3>
                <input type="search" id="mySearch" required>
@@ -20,17 +20,17 @@ function homeScreenHTML(){
                         <option value = "psn">Playstation</option>
                     </select>
              </form>
-       </div>
+        </div>
         <div class="item">
             <form class="friend">
                 <h3 id="friendName">Enter Your Friend's User Name</h3>
                 <input type="search" id="mySearchFriend" required>
                     <h3> Select Platform </h3>
-                        <select id = "platformfriend">
-                            <option value = "battle" selected>Battle Net</option>
-                            <option value = "steam">Steam</option>
-                            <option value = "xbl">Xbox</option>
-                            <option value = "psn">Playstation</option>
+                    <select id = "platformfriend">
+                        <option value = "battle" selected>Battle Net</option>
+                        <option value = "steam">Steam</option>
+                        <option value = "xbl">Xbox</option>
+                        <option value = "psn">Playstation</option>
                     </select>
             </form>
         </div>
@@ -48,33 +48,29 @@ function resultsHTML(){
  return`   <section>
  <h1>Results</h1>
     <div class="group">
-       <div class="item">
-            <form class="user">
-              <section id="results">
-                     <ul id="results-list">
-                        <div class="btn-container">
-                            <button class="tab-btn active" data-id="player-stats">Player Stats</button>
-                            <button class="tab-btn" data-id="game-stats">Game Stats</button>
-                            <button class="tab-btn" data-d="weapon-stats">Weapon Stats</button> 
-                        </div>               
-                     </ul>
-               </section>
-             </form>
-      </div>
-         <div class="item">
-               <form class="friend">
-                   <section id="results-friend">
-                     <ul id="results-list-friend">
+        <div class="item">
+            <section id="results" class="user">
+                <div class="btn-container" id="results-list">
+                    <button class="tab-btn active" data-id="player-stats">Player Stats</button>
+                    <button class="tab-btn" data-id="game-stats">Game Stats</button>
+                    <button class="tab-btn" data-d="weapon-stats">Weapon Stats</button> 
+                </div>
+            </section>
+        </div>
+        <div class="item">
+            <form class="friend">
+                <section id="results-friend">
+                    <ul id="results-list-friend">
                         <div class="tab">
                             <button class="tablinks2" onclick="openTabFriend(event, 'Player Stats2')" id="defaultOpen">Player Stats</button>
                             <button class="tablinks2" onclick="openTabFriend(event, 'Game Stats2')">Game Stats</button>
                             <button class="tablinks2" onclick="openTabFriend(event, 'Weapon Stats2')">Weapon Stats</button>
                         </div>
                     </ul>
-                   </section>
-               </form>
-         </div>
-      </div>
+                </section>
+            </form>
+        </div>
+    </div>
     <div class = "submitbutton">
         <button type="button" id="restart-btn"> Try Again </button>
     </div>
@@ -88,9 +84,6 @@ function formatQueryParams(params) {
 return queryItems.join('/');
 }
 
-
-
-
 //function to get the user name
 function getUserbyId(){
     
@@ -98,11 +91,6 @@ function getUserbyId(){
     let re = /#/gi;
     let newGamerTag =gamerTag.replace(re, "%2523");
     let platform = document.getElementById("platform").value;
-console.log(platform);
-
-    
-
-  
 
   const url = searchUrl  + newGamerTag + '/' + platform;
   console.log(url);
@@ -176,32 +164,32 @@ console.log(platform);
    
     $('#results-list').append(
         `<h3>${response.username}</h3>
-    <article id="player-stats active" class="tablink">
-        <p>Level: ${response.level}<p>
-        <p>Accuracy: ${response.lifetime.all.properties.accuracy}</p>
-        <p>K/D Ratio: ${response.lifetime.all.properties.kdRatio}</p>
-        <p>Kills: ${response.lifetime.all.properties.kills}</p>
-        <p>Deaths: ${response.lifetime.all.properties.deaths}</p>
-        <p>Headshots: ${response.lifetime.all.properties.headshots}</p>
-        <p>Misses: ${response.lifetime.all.properties.misses}</p>
-    </article>
-    <article id="game-stats" class="tablink">
-        <p>Games Played: ${response.lifetime.all.properties.gamesPlayed}</p>
-        <p>Wins: ${response.lifetime.all.properties.wins}</p>
-        <p>Wins loss Ratio: ${response.lifetime.all.properties.wlRatio}</p>
-        <p>Longest Win Streak: ${response.lifetime.all.properties.recordLongestWinStreak}</p>
-        <p>Most Kills in a Match: ${response.lifetime.all.properties.recordKillsInAMatch}</p>
-        <p>Highest Kill Streak: ${response.lifetime.all.properties.recordKillStreak}</p>
-        <p>Suicides: ${response.lifetime.all.properties.suicides}</p>
-    </article>
-    <article id="weapon-stats" class="tablink">
-        <p> Assault Rifle Kills: ${sumAR}
-        <p> SMG Kills: ${sumSMG}
-        <p> LMG Kills: ${sumLMG}
-        <p> Shotgun Kills: ${sumSG}
-        <p> Sniper Rifle Kills: ${sumSN}
-        <p> Pistol Kills: ${sumP}
-    </article>
+            <article id="player-stats" class="tablink active">
+                <p>Level: ${response.level}<p>
+                <p>Accuracy: ${response.lifetime.all.properties.accuracy}</p>
+                <p>K/D Ratio: ${response.lifetime.all.properties.kdRatio}</p>
+                <p>Kills: ${response.lifetime.all.properties.kills}</p>
+                <p>Deaths: ${response.lifetime.all.properties.deaths}</p>
+                <p>Headshots: ${response.lifetime.all.properties.headshots}</p>
+                <p>Misses: ${response.lifetime.all.properties.misses}</p>
+            </article>
+            <article id="game-stats" class="tablink">
+                <p>Games Played: ${response.lifetime.all.properties.gamesPlayed}</p>
+                <p>Wins: ${response.lifetime.all.properties.wins}</p>
+                <p>Wins loss Ratio: ${response.lifetime.all.properties.wlRatio}</p>
+                <p>Longest Win Streak: ${response.lifetime.all.properties.recordLongestWinStreak}</p>
+                <p>Most Kills in a Match: ${response.lifetime.all.properties.recordKillsInAMatch}</p>
+                <p>Highest Kill Streak: ${response.lifetime.all.properties.recordKillStreak}</p>
+                <p>Suicides: ${response.lifetime.all.properties.suicides}</p>
+            </article>
+            <article id="weapon-stats" class="tablink">
+                <p> Assault Rifle Kills: ${sumAR}
+                <p> SMG Kills: ${sumSMG}
+                <p> LMG Kills: ${sumLMG}
+                <p> Shotgun Kills: ${sumSG}
+                <p> Sniper Rifle Kills: ${sumSN}
+                <p> Pistol Kills: ${sumP}
+            </article>
         `  )
  };
 
@@ -228,7 +216,65 @@ function getFriendUserbyId(){
     .catch(error => alert('User was not found or platform was incorrect, please try again.'));
 
 }
+// https://javascript.info/async-await
+// async function myFetch(){
+//   let gamerTag = document.getElementById("mySearch").value;
+//     let re = /#/gi;
+//     let newGamerTag =gamerTag.replace(re, "%2523");
+//     let platform = document.getElementById("platform").value;
+ 
+//     const url = searchUrl + newGamerTag + '/' + platform;
 
+//     let response = await fetch(url, {
+//         "method": "Get",
+//         "headers":{
+//             "x-rapidapi-host": "call-of-duty-modern-warfare.p.rapidapi.com",
+//             "x-rapidapi-key": "4f73f6c31fmshcd3619c19341d56p122b48jsn0b9f0f427edc",
+//         }
+//     })
+//     if(!response.ok) {
+//         console.log(response, 'string');
+//         throw new Error(`User was not found or platform was incorrect, please try again. ${response.status}`)
+//     } else {
+//         console.log(response.json(), '239');
+//         return await response.json();
+//     }
+// }
+// myFetch().then(responseJson => {
+//     displayResults(responseJson) 
+// })
+//.catch(error => alert('User was not found or platform was incorrect, please try again.')
+//);
+
+async function myFetch(){
+    let gamerTag = document.getElementById("mySearch").value;
+    let re = /#/gi;
+    let newGamerTag =gamerTag.replace(re, "%2523");
+    let platform = document.getElementById("platform").value;
+    const url = searchUrl + newGamerTag + '/' + platform;
+      try {
+        let response = await fetch(url, {
+          "method": "Get",
+          "headers":{
+              "x-rapidapi-host": "call-of-duty-modern-warfare.p.rapidapi.com",
+              "x-rapidapi-key": "4f73f6c31fmshcd3619c19341d56p122b48jsn0b9f0f427edc",
+          }
+        })
+        let data = await response.json();
+        console.log(data, 'this is data')
+        let datak = () => {
+            console.log(datak, 'this is responseJson')
+            return displayResults(datak) 
+          }
+      }catch(error){
+        console.log(error, 'Ahhhh')
+        }
+    }
+//   myFetch().then(data => {
+//     console.log(data, 'this is responseJson')
+//     displayResults(data); 
+//   })
+    
 //function to display friend user results
 function displayResultsFriend(responseJson) {
     console.log(responseJson);
@@ -316,33 +362,38 @@ function displayResultsFriend(responseJson) {
 };
 
 //function to hide other tabs once clicked for user results
-const tabUser = document.querySelector("#results");
+const el  = document.querySelector(".user");
 const btns = document.querySelectorAll(".tab-btn");
-const articles = document.querySelectorAll(".tablinks");
-
-document.addEventListener("click", function(event){
-    event.preventDefault();
-    const id = event.target.dataset.id; if(id){
-    btns.forEach(function(btn){btn.classList.remove("active");}); event.target.classList.add("active");
-    articles.forEach(function (article){
-        article.classList.remove("active"); });
-        const element = document.getElementById(id);
-        element.classList.add("active");} })
-    
-
+const articles = document.querySelectorAll(".tablink");
+if(el){
+    el.addEventListener("click", function(event){
+        //event.preventDefault();
+        const id = event.target.dataset.id; 
+        if(id){
+            btns.forEach(function(btn){
+                btn.classList.remove("active");
+            }); 
+            event.target.classList.add("active");
+            // hide other articles
+            articles.forEach(function(article){
+                article.classList.remove("active"); 
+            });
+            const element = document.getElementById(id);
+            element.classList.add("active");
+        } 
+    })
+}
 
 //function to hide other tabs for friend results
 function openTabFriend(event, tabName){
     event.preventDefault();
-    var i, friendTab;
+    let i, friendTab;
 
     friendTab = document.getElementsByClassName("friendTab");
     for (i = 0; i < friendTab.length; i++) {
         friendTab[i].style.display = "none";
    };
-
   document.getElementById(tabName).style.display = "block";
-   
 };
 
 //function to handle restart click
@@ -354,23 +405,31 @@ function restartClick() {
 
 //function to make sure user submits a user name in the fields
 function empty(){
-    var userSearch;
-    var friendSearch;
+    //let userSearch;
+    //let friendSearch;
 
-    userSearch = document.getElementById("mySearch").value;
-    friendSearch = document.getElementById("mySearchFriend").value;
+    let userSearch = document.getElementById("mySearch").value;
+    let friendSearch = document.getElementById("mySearchFriend").value;
 
-    if (userSearch ==="" && friendSearch ===""){
+    // let responseInputVal = await data(userSearch, friendSearch)
+    // if(!responseInputVal){
+    //     throw new Error( alert("Please Enter A User Name"))
+    // } else {
+    //     getUserbyId();
+    //     getFriendUserbyId();
+    //     $('main').html(resultsHTML()); 
+    // }
+
+    if(userSearch ==="" && friendSearch ===""){
         alert("Please Enter A User Name");
         return false;
+    } else{
+        myFetch();
+    //    getUserbyId();
+    //  getFriendUserbyId();
+     //   $('main').html(resultsHTML());     
     }
-
-    else{
-        getUserbyId();
-        getFriendUserbyId();
-        $('main').html(resultsHTML());     
-            }
-        };
+};
 
 
     $(function() {
@@ -378,3 +437,4 @@ function empty(){
         $('main').html(homeScreenHTML());
         restartClick();
       });
+//IWL RAVEN (XBOX) & IWL PATRON (XBOX)
