@@ -20,7 +20,7 @@
     font-size: 5vw !important;
   }
   
-  p{
+  li{
     font-size: 3vw !important;
     }
 
@@ -86,13 +86,15 @@ h3{
   text-shadow: 2px 1px 4px rgb(61, 22, 21);
 }
 
-/* Style the p text */
-p{
+/* Style the li text */
+li{
   color: white;
   text-align: center;
   font-size: 20px;
   color: white;
   text-shadow: 2px 2px 4px #000000;
+  list-style-type:none;
+  line-height: 200%;  
 }
 
 /* Style the form */
@@ -247,6 +249,7 @@ form {
   border-top: none;
   text-align: left;
 }
+
 /* Style the friend tab content */
 .friendTab {
   display: none;
@@ -254,3 +257,37 @@ form {
   border-top: none;
   text-align: left;
 }
+
+/* spinner*/
+#spinner{
+  visibility: hidden;
+  width: 80px;
+  height: 80px;
+
+  border: 2px solid #f3f3f3;
+  border-top:3px solid #f25a41;
+  border-radius: 100%;
+
+  position: absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right: 0;
+  margin: auto;
+
+  animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+  from {
+      transform: rotate(0deg);
+  } to {
+      transform: rotate(360deg);
+  }
+}
+
+#spinner.show {
+  visibility: visible;
+}
+/*spinner*/
+
